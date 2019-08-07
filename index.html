@@ -23,11 +23,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     
     <!--[if lt IE 9]>
-       <script type="text/javascript" src="js/html5shiv.min.js"></script>
-    <![endif]-->
+       <script type="text/javascript" src="js/html5shiv.min.js"></script>     <![endif]-->
   </head>
   <body>
-    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="./images/bg.aac" style="display:none">
+    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="./images/bg.aac" style="display:none" id="myaudio">
     </audio>
     <!--PRELOADER-->
     <div id="preloader">
@@ -288,7 +287,7 @@
               </div>
               <div class="col-md-9 content-right">
                 <div class="row">
-                  <video src="./images/MyVideo_1.mp4" controls="controls" style="width:100%" poster="./images/c67df97603b9a43643d92129c249929.jpg"></video>
+                  <video οnclick="swap_music()" src="./images/MyVideo_1.mp4" controls="controls" style="width:100%" poster="./images/c67df97603b9a43643d92129c249929.jpg"></video>
                   <!-- <ul class="listing-item">
                     <li>
                       <div class="col-md-4 col-sm-4">
@@ -922,8 +921,17 @@
       </div>
     <!--/.CONTENT-WRAP END-->
     </div>
-    
-
+    <script type="text/javascript">
+       function swap_music() {
+            var oAudio = document.getElementById('myaudio');
+            if (oAudio.paused) {
+                oAudio.play(); 
+            }
+            else {
+                oAudio.pause(); 
+            }
+        }
+    </script>
     <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="js/jquery.appear.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
